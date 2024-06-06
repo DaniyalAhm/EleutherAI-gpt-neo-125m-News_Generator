@@ -6,11 +6,15 @@ const Generate_articles = () => {
     const [loading, setLoading] = React.useState(true);
     const [topic, setTopic] = React.useState("");
 
+    const handleChange = (e) => {
+        setTopic(e.target.value);
+    }
+
     const handleSubmit = (e) => {
-        const topic = e.target.value;
+        e.preventDefault();
         setLoading(true);
         setArticles(['Loading...']);
-        axios.get("http://localhost:5000/MakeNews", {topic: topic})
+        axios.get(`http://localhost:5000/MakeNews?topic=${topic}`) // Use backticks for template literals
             .then((response) => {
 
                 setArticles(response.data);
@@ -20,9 +24,7 @@ const Generate_articles = () => {
                 console.log(error);
             });
         }
-    const handleChange = (e) => {
-        setTopic(e.target.value);
-    }
+
 
     return (
         <div >
