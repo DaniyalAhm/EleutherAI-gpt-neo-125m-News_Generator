@@ -2,7 +2,8 @@
 
 This project demonstrates the fine-tuning and deployment of the EleutherAI GPT-Neo 125M model for generating news articles. The dataset used for training is the "All the News" dataset from Kaggle, covering the period from 2015 to 2020. The project includes a Flask web application that allows users to generate fake news without needing to train the model themselves.
 
- <! DISPLAY=TRUE– –>
+ <!-- DISPLAY=TRUE -->
+
 
 
 
